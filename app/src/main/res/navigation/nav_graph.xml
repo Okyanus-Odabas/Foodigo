@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.foodigo.ui.view.MainFragment"
+        android:label="Yemekler"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.foodigo.ui.view.DetailFragment"
+        android:label="Detay"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="yemek"
+            app:argType="com.example.foodigo.data.model.Yemek" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.foodigo.ui.view.CartFragment"
+        android:label="Sepet"
+        tools:layout="@layout/fragment_cart"/>
+
+</navigation>
